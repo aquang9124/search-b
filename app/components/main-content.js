@@ -13,11 +13,11 @@ export default Ember.Component.extend({
 	}.on('willDestroyElement'),
 	didScroll: function() {
 		if ($window.scrollTop() > 130) {
-			$('.main-links').addClass('fixed-nav');
+			$('.top-nav').addClass('fixed-nav');
 			$('.brand-wrapper').addClass('extended');
 		}
 		else {
-			$('.main-links').removeClass('fixed-nav');
+			$('.top-nav').removeClass('fixed-nav');
 			$('.brand-wrapper').removeClass('extended');
 		}
 	},

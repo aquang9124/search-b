@@ -78,7 +78,7 @@ section.brand-wrapper {
 
 	p.tagline {
 		position: absolute;
-		font-size: 1em;
+		font-size: 1.15em;
 		top: 65%;
 		left: 0;
 		right: 0; 
@@ -91,13 +91,16 @@ section.brand-wrapper.extended {
 }
 
 // stylings specifically for the main navigation
-nav[role="navigation"] {
+nav.top-nav {
 	width: 100%;
 	height: 50px;
-	background-color: inherit;
+	background-color: #fff;
 
 	ul.main-links {
-		padding: 0 5%;
+		width: 80%;
+		padding: 0;
+		margin: 0 auto;
+		text-align: center;
 
 		> li {
 			display: inline-block;
@@ -119,18 +122,44 @@ nav[role="navigation"] {
 			}
 		}
 	}
+}
 
-	ul.main-links.fixed-nav {
-		position: fixed;
-		z-index: 999;
-		background-color: #fff;
-		width: 100%;
-		border-bottom: 1px solid #ddd;
-		top: 0;
-		box-shadow: 1px 2px 5px -4px black;
+nav.top-nav.fixed-nav {
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	top: 0;
+	box-shadow: 1px 2px 5px -4px black;
+}
+
+// styling for the mobile menu
+div.mobile-menu {
+	display: none;
+}
+
+// stylings specifically for the icon bars that will be shifting around
+// to produce some cool effects.
+button.open-menu-btn {
+	// this button is hidden when screen is not at mobile size
+	display: none;
+	margin: 0 auto;
+
+	.movable-icon-bar {
+		display: block;
+		width: 22px;
+		height: 5px;
+		background-color: #797979;
+		border-radius: 1px;
+
+		&:not(:first-child) {
+			margin-top: 3px;
+		}
 	}
 }
 
+
+// styling for header bg image
 section.bg-image {
 	width: 100%;
 	height: 65vh;
@@ -156,7 +185,8 @@ div.about-section {
 
 	> h1 {
 		color: #997979;
-		margin: 0 0 3% 0;
+		margin: 0;
+		letter-spacing: 0.1em;
 	}
 
 	hr.flaired-hr {
@@ -166,6 +196,7 @@ div.about-section {
 		border-color: black;
 		border-width: 1px 0 0 0;
 		border-radius: 20px;
+		margin-bottom: 0;
 
 		&:before {
 			display: block;
@@ -186,7 +217,7 @@ blockquote.about-quote {
 	font-size: 16px;
 	font-size: 1.85vw;
 	font-style: italic;
-	margin: 0.25em 0;
+	margin: 0;
 	border: none;
 	padding: 0.25em 40px;
 	line-height: 1.45;
@@ -207,8 +238,8 @@ blockquote.about-quote > cite {
 // about paragraph stylings
 p.about-content {
 	width: 69%;
-	margin: 2% auto;
-	font-size: 1.5em;
+	margin: 5% auto 0;
+	font-size: 1.45em;
 	text-align: justify;
 }
 
@@ -221,3 +252,48 @@ p.about-content {
 			 Q U E R I E S
 							*/
 // ------------------------ //
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+	// change text sizes to account for smaller screen
+	html, body {
+		font-size: 0.8em;
+	}
+
+	div.about-section > h1 {
+		font-size: 2.3em;
+	}
+
+	blockquote.about-quote {
+		font-size: 1.4em;
+	}
+
+	// change nav dimensions to account for opening/closing of mobile menu
+	nav.top-nav {
+		height: auto;
+	}
+
+	div.mobile-menu {
+		display: block;
+		height: 50px;
+		position: relative;
+	}
+
+	button.open-menu-btn {
+		// this button is shown when screen is not at mobile size
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: auto;
+	}
+
+	// stylings for the movable icon bars on mobile
+	button.open-menu-btn {
+		
+	}
+
+	// hide main links
+	ul.main-links {
+		display: none;
+	}
+}
