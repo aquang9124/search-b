@@ -1,29 +1,3 @@
-<header class="header-wrapper">
-	<section class="brand-wrapper">
-		<p class="brand-text">Search.b</p>
-		<p class="tagline">Book Information</p>
-	</section>
-	<nav role="navigation">
-		<ul class="main-links">
-			<li>
-				<a href="javascript: void(0)" {{action 'scrollToElement' "top"}}>Home</a>
-			</li>
-			<li>
-				<a href="javascript: void(0)" {{action 'scrollToElement' "about"}}>About</a>
-			</li>
-			<li>
-				<a href="javascript: void(0);">Find</a>
-			</li>
-			<li>
-				<a href="javascript: void(0);">Contact</a>
-			</li>
-		</ul>
-	</nav>
-</header>
-<div class="container-fluid content-wrapper">
-	<div class="row">
-		<section class="bg-image" role="presentation">
-		</section>
-	</div>
-	{{outlet}}
-</div>
+{{partial 'navbar'}}
+{{#main-content}}
+{{/main-content}}
