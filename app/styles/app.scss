@@ -55,6 +55,7 @@ section.brand-wrapper {
 	text-align: center;
 	position: relative;
 	border-bottom: 1px solid #ddd;
+	text-transform: uppercase;
 
 	> p.brand-text {
 		width: 180px;
@@ -77,7 +78,6 @@ section.brand-wrapper {
 
 	p.tagline {
 		position: absolute;
-		font-style: italic;
 		font-size: 1em;
 		top: 65%;
 		left: 0;
@@ -206,7 +206,7 @@ blockquote.about-quote > cite {
 
 // about paragraph stylings
 p.about-content {
-	width: 70%;
+	width: 69%;
 	margin: 2% auto;
 	font-size: 1.5em;
 	text-align: justify;
