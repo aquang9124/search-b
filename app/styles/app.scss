@@ -56,21 +56,18 @@ section.brand-wrapper {
 	position: relative;
 	border-bottom: 1px solid #ddd;
 
-	> a.brand-link {
-		width: 200px;
+	> p.brand-text {
+		width: 180px;
 		position: absolute;
 		top: 25%;
 		left: 0;
 		right: 0;
 		margin: 0 auto;
+		color: #997979;
 		text-decoration: none;
 		font-size: 2.25em;
+		cursor: default;
 		@include transitions(0.5s, ease-in-out);
-
-		&:link, &:visited {
-			color: #997979;
-			text-decoration: none;
-		}
 
 		&:hover {
 			color: #ca2017;
@@ -82,17 +79,21 @@ section.brand-wrapper {
 		position: absolute;
 		font-style: italic;
 		font-size: 1em;
-		top: 60%;
+		top: 65%;
 		left: 0;
 		right: 0; 
 	}
+}
+
+section.brand-wrapper.extended {
+	height: 100%;
+	border: none;
 }
 
 // stylings specifically for the main navigation
 nav[role="navigation"] {
 	width: 100%;
 	height: 50px;
-	box-shadow: 0 2px 2px -2px black;
 	background-color: inherit;
 
 	ul.main-links {
@@ -102,6 +103,7 @@ nav[role="navigation"] {
 			display: inline-block;
 
 			> a {
+				text-transform: uppercase;
 				line-height: 50px;
 				padding: 0 10px;
 				text-decoration: none;
@@ -117,11 +119,21 @@ nav[role="navigation"] {
 			}
 		}
 	}
+
+	ul.main-links.fixed-nav {
+		position: fixed;
+		z-index: 999;
+		background-color: #fff;
+		width: 100%;
+		border-bottom: 1px solid #ddd;
+		top: 0;
+		box-shadow: 1px 2px 5px -4px black;
+	}
 }
 
 section.bg-image {
 	width: 100%;
-	height: 50vh;
+	height: 65vh;
 	background: 
 		linear-gradient(
 	      rgba(0, 0, 0, 0.35), 
@@ -140,9 +152,10 @@ section.bg-image {
 div.about-section {
 	text-align: center;
 	padding: 30px 0;
-	color: #997979;
+	color: #797979;
 
 	> h1 {
+		color: #997979;
 		margin: 0 0 3% 0;
 	}
 
@@ -171,13 +184,12 @@ div.about-section {
 blockquote.about-quote {
 	// fallback in case browser does not support vw
 	font-size: 16px;
-	font-size: 2vw;
+	font-size: 1.85vw;
 	font-style: italic;
 	margin: 0.25em 0;
 	border: none;
 	padding: 0.25em 40px;
 	line-height: 1.45;
-	color: #797979;
 	text-align: center;
 }
 
@@ -190,4 +202,12 @@ blockquote.about-quote > cite {
 	&:before {
 		content: "\2014 \2009";
 	}
+}
+
+// about paragraph stylings
+p.about-content {
+	width: 70%;
+	margin: 2% auto;
+	font-size: 1.5em;
+	text-align: justify;
 }
