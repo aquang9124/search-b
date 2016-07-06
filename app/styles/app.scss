@@ -133,17 +133,10 @@ nav.top-nav.fixed-nav {
 	box-shadow: 1px 2px 5px -4px black;
 }
 
-// styling for the mobile menu
-div.mobile-menu {
-	display: none;
-}
-
-// stylings specifically for the icon bars that will be shifting around
-// to produce some cool effects.
-button.open-menu-btn {
+// stylings for the mobile menu
+div.open-menu-btn {
 	// this button is hidden when screen is not at mobile size
 	display: none;
-	margin: 0 auto;
 
 	.movable-icon-bar {
 		display: block;
@@ -151,10 +144,6 @@ button.open-menu-btn {
 		height: 5px;
 		background-color: #797979;
 		border-radius: 1px;
-
-		&:not(:first-child) {
-			margin-top: 3px;
-		}
 	}
 }
 
@@ -270,26 +259,52 @@ p.about-content {
 	nav.top-nav {
 		height: auto;
 	}
-
-	div.mobile-menu {
+	
+	// stylings for mobile menu
+	div.open-menu-btn {
+		// this button is shown when screen is at mobile size
 		display: block;
+		width: 100%;
 		height: 50px;
-		position: relative;
+		cursor: pointer;
+
+		.movable-icon-bar {
+			height: 3px;
+			position: relative;
+			top: 30%;
+
+			margin: 0 auto;
+			@include transitions(0.3s, ease-in-out);
+
+			&:not(:first-child) {
+				margin-top: 5px;
+			}
+		}
 	}
 
-	button.open-menu-btn {
-		// this button is shown when screen is not at mobile size
-		display: block;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		height: auto;
-	}
+	// when menu is active
+	div.open-menu-btn.active {
 
-	// stylings for the movable icon bars on mobile
-	button.open-menu-btn {
-		
+		.movable-icon-bar {
+			top: 55%;
+			background-color: #ca2017;
+			transition: opacity 0.2s linear 0s,margin 0.2s linear 0s,transform 0.2s linear 0.2s;
+
+			&:nth-child(1) {
+				margin-top: -5px;
+				transform: rotate(45deg);
+			}
+
+			&:nth-child(2) {
+				margin-top: 0;
+				opacity: 0;
+			}
+
+			&:nth-child(3) {
+				margin-top: -6px;
+				transform: rotate(-45deg);
+			}
+		}
 	}
 
 	// hide main links
