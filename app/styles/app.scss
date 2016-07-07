@@ -179,7 +179,7 @@ div.about-section {
 	}
 
 	hr.flaired-hr {
-		width: 70%;
+		width: 75%;
 		height: 30px;
 		border-style: solid;
 		border-color: black;
@@ -204,11 +204,12 @@ div.about-section {
 blockquote.about-quote {
 	// fallback in case browser does not support vw
 	font-size: 16px;
-	font-size: 1.85vw;
+	font-size: 1.8vw;
+	width: 75%;
 	font-style: italic;
-	margin: 0;
+	margin: 0 auto;
 	border: none;
-	padding: 0.25em 40px;
+	padding: 0;
 	line-height: 1.45;
 	text-align: center;
 }
@@ -226,9 +227,9 @@ blockquote.about-quote > cite {
 
 // about paragraph stylings
 p.about-content {
-	width: 69%;
+	width: 75%;
 	margin: 5% auto 0;
-	font-size: 1.45em;
+	font-size: 1.35em;
 	text-align: justify;
 }
 
@@ -248,11 +249,20 @@ p.about-content {
 	}
 
 	div.about-section > h1 {
-		font-size: 2.3em;
+		font-size: 2.5em;
+	}
+
+	p.about-content {
+		font-size: 1.65em;
 	}
 
 	blockquote.about-quote {
-		font-size: 1.4em;
+		font-size: 1.45em;
+		text-align: justify;
+
+		> cite {
+			text-align: center;
+		}
 	}
 
 	// change nav dimensions to account for opening/closing of mobile menu
@@ -288,7 +298,6 @@ p.about-content {
 		.movable-icon-bar {
 			top: 55%;
 			background-color: #ca2017;
-			transition: opacity 0.2s linear 0s,margin 0.2s linear 0s,transform 0.2s linear 0.2s;
 
 			&:nth-child(1) {
 				margin-top: -5px;
@@ -307,8 +316,50 @@ p.about-content {
 		}
 	}
 
+	// hide section brand-wrapper in mobile
+	section.brand-wrapper {
+		display: none;
+	}
+
+	header.header-wrapper {
+		height: 50px;
+	}
+
+	// nav is fixed from the start
+	nav.top-nav {
+		position: fixed;
+		z-index: 999;
+	}
+
+	nav.top-nav.fixed-nav {
+		border: none;
+	}
+
 	// hide main links
 	ul.main-links {
 		display: none;
+	}
+
+	// show main links when open menu btn has `.active` class
+	nav.top-nav > ul.main-links.opened {
+		display: block;
+		width: 100%;
+
+		> li {
+			width: 100%;
+			height: 50px;
+			display: block;
+			background-color: #333;
+
+			> a {
+				display: block;
+				width: 100%;
+				height: 100%;
+
+				&:hover {
+					color: #ca2017;
+				}
+			}
+		}
 	}
 }

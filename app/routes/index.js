@@ -13,10 +13,12 @@ export default Ember.Route.extend({
 			if (this.get('menuActive') === false) {
 				this.set('menuActive', true);
 				$('.open-menu-btn').addClass('active');
+				$('.main-links').addClass('opened');
 			}
 			else {
 				this.set('menuActive', false);
 				$('.open-menu-btn').removeClass('active');
+				$('.main-links').removeClass('opened');
 			}
 		}
 	}
