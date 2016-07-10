@@ -245,6 +245,15 @@ input.smaller-input {
 	margin: 0 auto;
 }
 
+// hide info section until info is available
+section.info-section {
+	display: none;
+}
+
+section.info-section.reveal {
+	display: block;
+}
+
 // END OF NORMAL CSS //
 
 // ------------------------ //

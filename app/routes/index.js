@@ -20,6 +20,9 @@ export default Ember.Route.extend({
 				$('.open-menu-btn').removeClass('active');
 				$('.main-links').removeClass('opened');
 			}
+		},
+		getBookInfo: function() {
+			var val = $('.smaller-input').val();
 		}
 	}
 });
